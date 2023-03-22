@@ -1,9 +1,9 @@
 {
-	"name": "portfolio-3d-new",
+	"name": "portfolio-new-3d",
 	"private": true,
 	"version": "0.0.0",
 	"type": "module",
-	"description": "3D Developer Portfolio website using 3D-graphics and animations with ThreeJS, React and Tailwind",
+	"description": "A new Scrollable 3D Animation Portfolio website (3D-graphics and animations with ThreeJS!)",
 	"license": "ISC",
 	"keywords": [
 		"vite",
