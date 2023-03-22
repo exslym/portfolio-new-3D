@@ -1,8 +1,10 @@
 import legacy from '@vitejs/plugin-legacy';
+import autoprefixer from 'autoprefixer';
 import Path from 'path';
 import { defineConfig } from 'vite';
 import { ViteAliases } from 'vite-aliases';
 // import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
+import pages from './src/pages/pages.config';
 
 const DEFAULT_OPTIONS = {
 	test: /\.(jpe?g|png|tiff|webp|svg|avif)$/i,
@@ -59,8 +61,19 @@ const DEFAULT_OPTIONS = {
 	},
 };
 
+const pagesInput = {};
+pages.forEach(page => {
+	pagesInput[page.name] = page.path;
+});
+
 export default defineConfig({
+	root: Path.resolve(__dirname, './src'),
+	base: './',
+	publicDir: '../public',
 	css: {
+		postcss: {
+			plugins: [autoprefixer],
+		},
 		devSourcemap: true,
 	},
 	plugins: [
@@ -69,13 +82,12 @@ export default defineConfig({
 		// 	DEFAULT_OPTIONS,
 		// }),
 		legacy({
-			targets: ['defaults', 'not IE 11'],
+			targets: ['> 0.5%', 'last 2 versions', 'Firefox ESR', 'not dead'],
 		}),
 	],
 	// site: 'https://exslym.github.io',
 	// base: '/My-Portfolio-3D',
 	// site: 'https://01dev.ru',
-	base: '/',
 	build: {
 		emptyOutDir: true,
 		outDir: Path.resolve(__dirname, './build'),
