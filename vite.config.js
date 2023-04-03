@@ -85,9 +85,7 @@ export default defineConfig({
 			targets: ['> 0.5%', 'last 2 versions', 'Firefox ESR', 'not dead'],
 		}),
 	],
-	// site: 'https://exslym.github.io',
-	// base: '/My-Portfolio-3D',
-	// site: 'https://01dev.ru',
+
 	build: {
 		emptyOutDir: true,
 		outDir: Path.resolve(__dirname, './build'),
