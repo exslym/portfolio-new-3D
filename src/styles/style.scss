@@ -1,4 +1,4 @@
-@import url('https://use.typekit.net/jmk3xov.css');
+// @import url('https://use.typekit.net/jmk3xov.css');
 
 canvas {
 	position: fixed;
@@ -10,7 +10,7 @@ canvas {
 	--dark-bg: rgba(15, 15, 15, 0.95);
 	--spacing: 350px;
 
-	font-family: brandon-grotesque, sans-serif;
+	font-family: Arial, Helvetica, brandon-grotesque, sans-serif;
 	font-weight: 400;
 	font-style: normal;
 }
@@ -32,7 +32,7 @@ h1,
 h2,
 h3,
 blockquote {
-	font-family: elevon, sans-serif;
+	font-family: Arial, Helvetica, elevon, sans-serif;
 	font-weight: 700;
 	font-style: normal;
 }

@@ -22,14 +22,15 @@ camera.position.setX(-3);
 
 renderer.render(scene, camera);
 
-// Torus
+// Torus or SphereGeometry
 
-const geometry = new THREE.TorusGeometry(10, 3, 16, 100);
+// const geometry = new THREE.TorusGeometry(10, 3, 16, 100);
+const geometry = new THREE.SphereGeometry(100, 50, 35);
 // const material = new THREE.MeshStandardMaterial({ color: 0xff6347 });
-const material = new THREE.MeshBasicMaterial({ color: 0xff6347, wireframe: true });
+const material = new THREE.MeshBasicMaterial({ color: 0x86a1c8, wireframe: true });
 const torus = new THREE.Mesh(geometry, material);
 
-scene.add(torus);
+// scene.add(torus);
 
 // Lights
 
@@ -120,15 +121,18 @@ moveCamera();
 function animate() {
 	requestAnimationFrame(animate);
 
-	torus.rotation.x += 0.01;
-	torus.rotation.y += 0.005;
-	torus.rotation.z += 0.01;
+	// torus.rotation.x += 0.01;
+	// torus.rotation.y += 0.005;
+	// torus.rotation.z += 0.01;
+	torus.rotation.x += 0.001;
+	torus.rotation.y += 0.0005;
+	torus.rotation.z += 0.001;
 
 	photo.rotation.x += 0.005;
 	photo.rotation.y -= 0.01;
 	photo.rotation.z -= 0.005;
 
-	moon.rotation.y += 0.008;
+	moon.rotation.y += 0.004;
 
 	// stars.rotation.y += 0.05;
 
