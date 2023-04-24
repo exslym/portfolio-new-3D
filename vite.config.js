@@ -3,7 +3,7 @@ import autoprefixer from 'autoprefixer';
 import Path from 'path';
 import { defineConfig } from 'vite';
 import { ViteAliases } from 'vite-aliases';
-// import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
+import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 import pages from './src/pages/pages.config';
 
 const DEFAULT_OPTIONS = {
@@ -78,9 +78,9 @@ export default defineConfig({
 	},
 	plugins: [
 		ViteAliases(),
-		// ViteImageOptimizer({
-		// 	DEFAULT_OPTIONS,
-		// }),
+		ViteImageOptimizer({
+			DEFAULT_OPTIONS,
+		}),
 		legacy({
 			targets: ['> 0.5%', 'last 2 versions', 'Firefox ESR', 'not dead'],
 		}),
